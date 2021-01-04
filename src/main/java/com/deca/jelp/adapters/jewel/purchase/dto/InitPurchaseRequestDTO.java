@@ -1,19 +1,17 @@
 package com.deca.jelp.adapters.jewel.purchase.dto;
 
-import com.deca.jelp.adapters.jewel.purchase.api.InitPurchase;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonSerialize(as = InitPurchaseRequestDTO.class)
-@JsonDeserialize(as = InitPurchaseRequestDTO.class)
 public class InitPurchaseRequestDTO {
 
+    @JsonProperty(value = "id_number")
     private String idNumber;
-    private String cellPhoneNumber;
+    @JsonProperty(value = "cellphone_number")
+    private String cellphoneNumber;
 
-    public InitPurchaseRequestDTO(String idNumber,String cellPhoneNumber){
+    public InitPurchaseRequestDTO(String idNumber,String cellphoneNumber){
         this.idNumber = idNumber;
-        this.cellPhoneNumber = cellPhoneNumber;
+        this.cellphoneNumber = cellphoneNumber;
     }
 
     public String getIdNumber() {
@@ -24,11 +22,11 @@ public class InitPurchaseRequestDTO {
         this.idNumber = idNumber;
     }
 
-    public String getCellPhoneNumber() {
-        return cellPhoneNumber;
+    public String getCellphoneNumber() {
+        return cellphoneNumber;
     }
 
-    public void setCellPhoneNumber(String cellPhoneNumber) {
-        this.cellPhoneNumber = cellPhoneNumber;
+    public void setCellphoneNumber(String cellphoneNumber) {
+        this.cellphoneNumber = cellphoneNumber;
     }
 }
