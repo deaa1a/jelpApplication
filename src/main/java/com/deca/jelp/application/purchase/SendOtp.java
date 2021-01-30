@@ -20,8 +20,8 @@ public class SendOtp {
         this.sendMessage = sendMessage;
     }
 
-    public void Execute(IdNumber idNumber, CellphoneNumber cellPhoneNumber, Otp otp){
-        otpRepository.save(idNumber,cellPhoneNumber,otp);
+    public void Execute(IdNumber idNumber, CellphoneNumber cellphoneNumber, Otp otp){
+        otpRepository.save(idNumber,cellphoneNumber,otp);
         sendMessage.send(otp);
     }
 

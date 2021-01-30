@@ -1,7 +1,9 @@
 package com.deca.jelp.adapters.jewel.purchase.api;
 
-import com.deca.jelp.adapters.jewel.purchase.dto.InitPurchaseRequestDTO;
+import com.deca.jelp.adapters.jewel.purchase.dto.InitClientDTO;
 import com.deca.jelp.application.purchase.SendOtp;
+import com.deca.jelp.domain.client.Names;
+import com.deca.jelp.domain.message.Message;
 import com.deca.jelp.domain.otp.Otp;
 import com.deca.jelp.domain.client.CellphoneNumber;
 import com.deca.jelp.domain.client.IdNumber;
@@ -21,7 +23,8 @@ public class InitPurchase {
     }
 
     @PostMapping(value = "/purchase/otp")
-    public void sendOtp(@RequestBody InitPurchaseRequestDTO request) {
+    public void sendOtp(@RequestBody InitClientDTO request) {
         sendOtp.Execute(new IdNumber(request.getIdNumber()), new CellphoneNumber(request.getCellphoneNumber()),new Otp(8));
+        new Message(new Names(request.getNames()), new Otp("4"));
     }
 }

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 public class OtpMysqlRepository implements OtpRepository {
     @Override
     public void save(IdNumber idNumber, CellphoneNumber cellphoneNumber, Otp otp) {
-        System.out.println("Save in DB "+ otp.getCode() +" - "+ cellphoneNumber.getValue()
-        );
+        System.out.println("Save in DB "+ otp.getCode() +" - "+ cellphoneNumber.getValue());
     }
 }

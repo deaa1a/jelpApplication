@@ -6,17 +6,17 @@ public class Otp {
     private String code;
 
 
-    public Otp(int sizeOtp) {
-        this.code = generateCode(sizeOtp);
+    public Otp(int lenghtOtp) {
+        this.code = generateCode(lenghtOtp);
     }
 
     public Otp(String code){
         this.code = code;
     }
 
-    private String generateCode(int sizeOtp) {
+    private String generateCode(int lenghtOtp) {
         return String.valueOf(new Random()
-                .ints(1,calculateInitialRange(sizeOtp), calculateFinalRange(sizeOtp))
+                .ints(1,calculateInitialRange(lenghtOtp), calculateFinalRange(lenghtOtp))
                 .findFirst()
                 .getAsInt());
     }
