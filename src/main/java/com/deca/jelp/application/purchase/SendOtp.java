@@ -25,4 +25,16 @@ public class SendOtp {
         sendMessage.send(otp);
     }
 
+    /**
+     * Delete me !!!
+     * */
+    public SendOtp(){}
+
+    /**
+     * Delete me !!!
+     * */
+    public int sumar(int numberOne, int numberTwo){
+        return numberOne + numberTwo;
+    }
+
 }
