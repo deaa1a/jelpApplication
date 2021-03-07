@@ -21,7 +21,7 @@ public class InitPurchase {
     }
 
     @PostMapping(value = "/purchase/otp")
-    public void sendOtp(@RequestBody InitPurchaseRequestDTO request){
-        sendOtp.Execute(new IdNumber(request.getIdNumber()), new CellphoneNumber(request.getCellphoneNumber()),new Otp(4));
+    public void sendOtp(@RequestBody InitPurchaseRequestDTO request) {
+        sendOtp.Execute(new IdNumber(request.getIdNumber()), new CellphoneNumber(request.getCellphoneNumber()),new Otp(8));
     }
 }
