@@ -1,4 +1,4 @@
-package com.deca.jelp.application.purchase;
+package com.deca.jelp.application.customer;
 
 import com.deca.jelp.domain.RegisterClient.persitence.CustomerRegistration;
 import com.deca.jelp.domain.client.*;
@@ -15,7 +15,11 @@ public class RegisterClient {
         this.customerRegistration = customerRegistration;
     }
 
-    public void Execute (Names names, SurName surName, SecondSurName secondSurName, CellphoneNumber cellphoneNumber, IdNumber idNumber, CityIdentifyCard cityIdentifyCard, CityResidence cityResidence){
-        customerRegistration.save(names, surName, secondSurName, cellphoneNumber, idNumber, cityIdentifyCard, cityResidence);
+    public void Execute (Name name, CellphoneNumber cellphoneNumber, IdNumber idNumber, CityIdentifyCard cityIdentifyCard, CityResidence cityResidence){
+        customerRegistration.save(name,
+                cellphoneNumber,
+                idNumber,
+                cityIdentifyCard,
+                cityResidence);
     }
 }

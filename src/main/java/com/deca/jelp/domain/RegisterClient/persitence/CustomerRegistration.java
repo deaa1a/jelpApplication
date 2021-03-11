@@ -5,5 +5,5 @@ import com.deca.jelp.domain.client.*;
 
 
 public interface CustomerRegistration {
-    void save(Names names, SurName surName, SecondSurName secondSurName, CellphoneNumber cellphoneNumber, IdNumber idNumber, CityIdentifyCard cityIdentifyCard, CityResidence cityResidence);
+    void save(Name name, CellphoneNumber cellphoneNumber, IdNumber idNumber, CityIdentifyCard cityIdentifyCard, CityResidence cityResidence);
 }

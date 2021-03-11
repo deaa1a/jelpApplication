@@ -1,7 +1,7 @@
 package com.deca.jelp.adapters.customer.api;
 
-import com.deca.jelp.adapters.jewel.purchase.dto.InitClientDTO;
-import com.deca.jelp.application.purchase.RegisterClient;
+import com.deca.jelp.adapters.customer.dto.CustomerRequestDTO;
+import com.deca.jelp.application.customer.RegisterClient;
 import com.deca.jelp.domain.client.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +19,13 @@ public class InitRegisterClient {
     }
 
     @PostMapping(value = "/customer")
-    public void registerClient(@RequestBody InitClientDTO request){
-        registerClient.Execute(new Names(request.getNames()),new SurName(request.getSurName()), new SecondSurName(request.getSecondSurName()),new CellphoneNumber(request.getCellphoneNumber()), new IdNumber(request.getIdNumber()), new CityIdentifyCard(request.getCityIdentityCard()), new CityResidence(request.getCityResidence()));
+    public void registerClient(@RequestBody CustomerRequestDTO request){
+        registerClient.Execute(
+                new Name(request.getName()),
+                new CellphoneNumber(request.getCellphoneNumber()),
+                new IdNumber(request.getIdNumber()),
+                new CityIdentifyCard(request.getCityIdentityCard()),
+                new CityResidence(request.getCityResidence()));
+
     }
 }

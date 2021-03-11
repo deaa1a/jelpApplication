@@ -4,12 +4,14 @@ public class Client {
 
     private IdNumber idNumber;
     private CellphoneNumber cellphoneNumber;
-    private Names name;
+    private Name name;
 
-    public Client(IdNumber idNumber, CellphoneNumber cellphoneNumber, Names name){
+    public Client(IdNumber idNumber, CellphoneNumber cellphoneNumber, Name name) {
+        this.idNumber = idNumber;
         this.cellphoneNumber = cellphoneNumber;
-        this.idNumber= idNumber;
         this.name = name;
     }
+
+    
 
 }

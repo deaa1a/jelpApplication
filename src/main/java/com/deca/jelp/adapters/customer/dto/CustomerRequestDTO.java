@@ -1,15 +1,11 @@
-package com.deca.jelp.adapters.jewel.purchase.dto;
+package com.deca.jelp.adapters.customer.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class InitClientDTO {
+public class CustomerRequestDTO {
 
-    @JsonProperty(value = "names")
-    private String names;
-    @JsonProperty(value = "sur_name")
-    private String surName;
-    @JsonProperty(value = "second_sur_name")
-    private String secondSurName;
+    @JsonProperty(value = "name")
+    private String name;
     @JsonProperty(value = "cellphone")
     private String cellphoneNumber;
     @JsonProperty(value = "id_number")
@@ -19,38 +15,21 @@ public class InitClientDTO {
     @JsonProperty(value = "city_residence")
     private String cityResidence;
 
-    public InitClientDTO(String names, String surName, String secondSurName, String cellphoneNumber, String idNumber, String cityIdentityCard, String cityResidence){
-        this.names = names;
-        this.surName = surName;
-        this.secondSurName = secondSurName;
+
+    public CustomerRequestDTO(String name, String cellphoneNumber, String idNumber, String cityIdentityCard, String cityResidence){
+        this.name = name;
         this.cellphoneNumber = cellphoneNumber;
         this.idNumber = idNumber;
         this.cityIdentityCard = cityIdentityCard;
         this.cityResidence = cityResidence;
     }
 
-    public String getNames() {
-        return names;
+    public String getName() {
+        return name;
     }
 
-    public void setNames(String names) {
-        this.names = names;
-    }
-
-    public String getSurName() {
-        return surName;
-    }
-
-    public void setSurName(String surName) {
-        this.surName = surName;
-    }
-
-    public String getSecondSurName() {
-        return secondSurName;
-    }
-
-    public void setSecondSurName(String secondSurName) {
-        this.secondSurName = secondSurName;
+    public void setNames(String names)   {
+        this.name = names;
     }
 
     public String getCellphoneNumber() {
