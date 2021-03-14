@@ -6,7 +6,9 @@ public class OtpRequestDTO {
 
     @JsonProperty(value = "name")
     private String name;
+    @JsonProperty(value = "id_number")
     private String idNumber;
+    @JsonProperty(value = "cellphone")
     private String cellphoneNumber;
 
     public OtpRequestDTO(String name, String idNumber, String cellphoneNumber) {

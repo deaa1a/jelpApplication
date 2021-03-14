@@ -29,9 +29,9 @@ public class InitPurchase {
                 new Name(request.getName()),
                 new IdNumber(request.getIdNumber()),
                 new CellphoneNumber(request.getCellphoneNumber()),
-                new Otp(8));
+                new Otp(4));
 
 
-        new Message(new Name(request.getName()), new Otp("4"));
+        new Message(new Name(request.getName()), new Otp(4));
     }
 }

@@ -10,18 +10,21 @@ public class CustomerRequestDTO {
     private String cellphoneNumber;
     @JsonProperty(value = "id_number")
     private String idNumber;
-    @JsonProperty(value = "city_residence_card")
-    private String cityIdentityCard;
-    @JsonProperty(value = "city_residence")
-    private String cityResidence;
+    @JsonProperty(value = "date_of_issue")
+    private String dateOfIssue;
+    @JsonProperty(value = "expedition_place")
+    private String expeditionPlace;
+    @JsonProperty(value = "place_of_birth")
+    private String placeOfBirth;
 
 
-    public CustomerRequestDTO(String name, String cellphoneNumber, String idNumber, String cityIdentityCard, String cityResidence){
+    public CustomerRequestDTO(String name, String cellphoneNumber, String idNumber, String dateOfIssue, String expeditionPlace, String placeOfBirth){
         this.name = name;
         this.cellphoneNumber = cellphoneNumber;
         this.idNumber = idNumber;
-        this.cityIdentityCard = cityIdentityCard;
-        this.cityResidence = cityResidence;
+        this.dateOfIssue = dateOfIssue;
+        this.expeditionPlace = expeditionPlace;
+        this.placeOfBirth = placeOfBirth;
     }
 
     public String getName() {
@@ -48,20 +51,28 @@ public class CustomerRequestDTO {
         this.idNumber = idNumber;
     }
 
-    public String getCityIdentityCard() {
-        return cityIdentityCard;
+    public String getDateOfIssue() {
+        return dateOfIssue;
     }
 
-    public void setCityIdentityCard(String cityResidenceCard) {
-        this.cityIdentityCard = cityResidenceCard;
+    public void setDateOfIssue(String dateOfIssue) {
+        this.dateOfIssue = dateOfIssue;
     }
 
-    public String getCityResidence() {
-        return cityResidence;
+    public String getExpeditionPlace() {
+        return expeditionPlace;
     }
 
-    public void setCityResidence(String cityResidence) {
-        this.cityResidence = cityResidence;
+    public void setExpeditionPlace(String cityResidenceCard) {
+        this.expeditionPlace = cityResidenceCard;
+    }
+
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
+    }
+
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
     }
 
 

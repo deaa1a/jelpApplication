@@ -1,9 +1,9 @@
 package com.deca.jelp.domain.client;
 
-public class CityIdentifyCard {
+public class ExpeditionPlace {
     private String value;
 
-    public CityIdentifyCard(String value){
+    public ExpeditionPlace(String value){
         this.value = value;
     }
 

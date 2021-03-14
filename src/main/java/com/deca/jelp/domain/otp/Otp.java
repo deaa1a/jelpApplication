@@ -37,8 +37,6 @@ public class Otp {
         }
     }
 
-
-
     public String getCode() {
         return code;
     }

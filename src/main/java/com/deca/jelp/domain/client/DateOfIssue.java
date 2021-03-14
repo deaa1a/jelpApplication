@@ -1,13 +1,15 @@
 package com.deca.jelp.domain.client;
 
-public class IdNumber {
+public class DateOfIssue {
+
     private String value;
 
-    public IdNumber(String value){
+    public DateOfIssue(String value){
         this.value = value;
     }
 
     public String getValue() {
         return value;
     }
+
 }

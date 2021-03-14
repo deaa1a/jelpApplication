@@ -9,8 +9,7 @@ public class SendMessageAWS implements SendMessage {
 
     @Override
     public boolean send(Otp otp) {
-        System.out.println("Sending OTP "
-                + otp.getCode());
+        System.out.println("Sending OTP " + otp.getCode());
         return false;
     }
 }
