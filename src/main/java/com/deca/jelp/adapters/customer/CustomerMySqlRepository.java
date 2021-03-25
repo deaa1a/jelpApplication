@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 public class CustomerMySqlRepository implements CustomerRepository {
     @Override
     public void save(Name name, CellphoneNumber cellphoneNumber, IdNumber idNumber, DateOfIssue dateOfIssue, ExpeditionPlace expeditionPlace, CityResidence cityResidence) {
-        System.out.println("Save in DB" + name.getFirstName() + " " + name.getSecondName() + " " + name.getFirstSurname() + " " + name.getSecondSurname() + " " + cellphoneNumber.getValue() + " " + idNumber.getValue() + " " + dateOfIssue.getValue() + " " + expeditionPlace.getValue() + " " + cityResidence.getValue());
+        System.out.println("Save in DB " + name.getFirstName() + " " + name.getSecondName()+ " " + name.getFirstSurname() + " " + name.getSecondSurname() + " " + cellphoneNumber.getValue() + " " + idNumber.getValue() + " " + dateOfIssue.getValue() + " " + expeditionPlace.getValue() + " " + cityResidence.getValue());
     }
 }

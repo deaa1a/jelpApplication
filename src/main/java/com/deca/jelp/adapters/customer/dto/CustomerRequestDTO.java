@@ -4,8 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CustomerRequestDTO {
 
-    @JsonProperty(value = "name")
-    private String name;
+    @JsonProperty(value = "first_name")
+    private String firstName;
+    @JsonProperty(value = "second_name")
+    private String secondName;
+    @JsonProperty(value = "first_surname")
+    private String firstSurname;
+    @JsonProperty(value = "second_surname")
+    private String secondSurname;
     @JsonProperty(value = "cellphone")
     private String cellphoneNumber;
     @JsonProperty(value = "id_number")
@@ -18,8 +24,11 @@ public class CustomerRequestDTO {
     private String placeOfBirth;
 
 
-    public CustomerRequestDTO(String name, String cellphoneNumber, String idNumber, String dateOfIssue, String expeditionPlace, String placeOfBirth){
-        this.name = name;
+    public CustomerRequestDTO(String firstName, String secondName, String firstSurname, String secondSurname, String cellphoneNumber, String idNumber, String dateOfIssue, String expeditionPlace, String placeOfBirth) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.firstSurname = firstSurname;
+        this.secondSurname = secondSurname;
         this.cellphoneNumber = cellphoneNumber;
         this.idNumber = idNumber;
         this.dateOfIssue = dateOfIssue;
@@ -27,20 +36,44 @@ public class CustomerRequestDTO {
         this.placeOfBirth = placeOfBirth;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setNames(String names)   {
-        this.name = names;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public String getFirstSurname() {
+        return firstSurname;
+    }
+
+    public void setFirstSurname(String firstSurname) {
+        this.firstSurname = firstSurname;
+    }
+
+    public String getSecondSurname() {
+        return secondSurname;
+    }
+
+    public void setSecondSurname(String secondSurname) {
+        this.secondSurname = secondSurname;
     }
 
     public String getCellphoneNumber() {
         return cellphoneNumber;
     }
 
-    public void setCellphoneNumber(String cellphone) {
-        this.cellphoneNumber = cellphone;
+    public void setCellphoneNumber(String cellphoneNumber) {
+        this.cellphoneNumber = cellphoneNumber;
     }
 
     public String getIdNumber() {
@@ -63,8 +96,8 @@ public class CustomerRequestDTO {
         return expeditionPlace;
     }
 
-    public void setExpeditionPlace(String cityResidenceCard) {
-        this.expeditionPlace = cityResidenceCard;
+    public void setExpeditionPlace(String expeditionPlace) {
+        this.expeditionPlace = expeditionPlace;
     }
 
     public String getPlaceOfBirth() {
@@ -74,6 +107,4 @@ public class CustomerRequestDTO {
     public void setPlaceOfBirth(String placeOfBirth) {
         this.placeOfBirth = placeOfBirth;
     }
-
-
 }

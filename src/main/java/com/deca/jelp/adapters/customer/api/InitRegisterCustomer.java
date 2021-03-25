@@ -19,9 +19,9 @@ public class InitRegisterCustomer {
     }
 
     @PostMapping(value = "/customer")
-    public void registerClient(@RequestBody CustomerRequestDTO request){
+    public void registerCustomer(@RequestBody CustomerRequestDTO request){
         registerCustomer.Execute(
-                new Name(request.getName()),
+                new Name(request.getFirstName(), request.getSecondName(), request.getFirstSurname(), request.getSecondSurname()),
                 new CellphoneNumber(request.getCellphoneNumber()),
                 new IdNumber(request.getIdNumber()),
                 new DateOfIssue(request.getDateOfIssue()),

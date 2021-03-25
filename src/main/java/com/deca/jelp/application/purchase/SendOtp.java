@@ -24,7 +24,9 @@ public class SendOtp {
     public void Execute(Name name, IdNumber idNumber, CellphoneNumber cellphoneNumber, Otp otp){
         otpRepository.save(name,idNumber,cellphoneNumber,otp);
         sendMessage.send(otp);
+
     }
+
 
     /**
      * Delete me !!!
