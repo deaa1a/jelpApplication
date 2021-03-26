@@ -1,4 +1,4 @@
-package com.deca.jelp.adapters;
+package com.deca.jelp.adapters.kindJewel.api;
 
 import org.springframework.stereotype.Repository;
 
