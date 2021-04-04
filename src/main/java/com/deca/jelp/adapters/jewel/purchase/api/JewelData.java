@@ -1,7 +1,7 @@
 package com.deca.jelp.adapters.jewel.purchase.api;
 
 import com.deca.jelp.adapters.jewel.purchase.dto.JewelRequestDTO;
-import com.deca.jelp.application.jewel.JewelRecord;
+import com.deca.jelp.application.jewel.SaveJewel;
 import com.deca.jelp.domain.jewel.CaratsJewel;
 import com.deca.jelp.domain.jewel.MaterialJewel;
 import com.deca.jelp.domain.jewel.TypeJewel;
@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JewelData {
 
-    private JewelRecord jewelRecord;
+    private SaveJewel saveJewel;
 
     @Autowired
-    public  JewelData(JewelRecord jewelRecord){
-        this.jewelRecord = jewelRecord;
+    public  JewelData(SaveJewel saveJewel){
+        this.saveJewel = saveJewel;
     }
 
     @PostMapping(value = "jewel")
     public void jewelRecord(@RequestBody JewelRequestDTO request){
-        jewelRecord.Execute(
+        saveJewel.Execute(
                 new TypeJewel(request.getTypeJewel()),
                 new CaratsJewel(request.getCaratsJewel()),
                 new WeightJewel(request.getWeightJewel()),

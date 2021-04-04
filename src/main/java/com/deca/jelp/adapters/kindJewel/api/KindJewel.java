@@ -1,5 +1,6 @@
 package com.deca.jelp.adapters.kindJewel.api;
 
+import com.deca.jelp.application.jewel.GetJewel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,16 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class KindJewel {
 
-    private KindJewelRepository kindJewelRepository;
+    private GetJewel getJewel;
 
     @Autowired
-    KindJewel(KindJewelRepository kindJewelRepository){
-        this.kindJewelRepository = kindJewelRepository;
+    KindJewel(GetJewel getJewel){
+        this.getJewel = getJewel;
     }
 
-    @GetMapping(value = "kind/jewel")
-    public void KindJewelRepository(){
-        kindJewelRepository.show();
+    @GetMapping(value = "jewels/type")
+    public void getJewel(){
+        getJewel.Execute();
     }
 
 

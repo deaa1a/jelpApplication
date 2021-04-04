@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class JewelRecord {
+public class SaveJewel {
 
     private JewelRepository jewelRepository;
 
     @Autowired
-    public JewelRecord(JewelRepository jewelRepository){
+    public SaveJewel(JewelRepository jewelRepository){
         this.jewelRepository = jewelRepository;
     }
 
