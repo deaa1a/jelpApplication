@@ -1,9 +1,9 @@
-package com.deca.jelp.domain.client;
+package com.deca.jelp.domain.customer;
 
-public class CellphoneNumber {
+public class CityResidence {
     private String value;
 
-    public CellphoneNumber(String value){
+    public CityResidence(String value){
         this.value = value;
     }
 

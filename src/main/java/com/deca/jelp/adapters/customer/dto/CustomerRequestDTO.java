@@ -2,7 +2,15 @@ package com.deca.jelp.adapters.customer.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class CustomerRequestDTO {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idCustomer;
 
     @JsonProperty(value = "first_name")
     private String firstName;

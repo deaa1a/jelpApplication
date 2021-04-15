@@ -1,9 +1,9 @@
-package com.deca.jelp.domain.client;
+package com.deca.jelp.domain.customer;
 
-public class ExpeditionPlace {
+public class IdNumber {
     private String value;
 
-    public ExpeditionPlace(String value){
+    public IdNumber(String value){
         this.value = value;
     }
 

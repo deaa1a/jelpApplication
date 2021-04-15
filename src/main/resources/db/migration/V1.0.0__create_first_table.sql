@@ -1,0 +1,17 @@
+CREATE TABLE Test (
+    Id INT PRIMARY KEY NOT NULL,
+    Name VARCHAR (50) NOT NULL,
+    Last_Name VARCHAR (50)
+);
+
+CREATE TABLE Test_1 (
+    Id INT PRIMARY KEY NOT NULL,
+    Name VARCHAR (50) NOT NULL,
+    Last_Name VARCHAR (50)
+);
+
+
+
+
+
+

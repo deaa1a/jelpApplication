@@ -2,7 +2,7 @@ package com.deca.jelp.adapters.customer.api;
 
 import com.deca.jelp.adapters.customer.dto.CustomerRequestDTO;
 import com.deca.jelp.application.customer.RegisterCustomer;
-import com.deca.jelp.domain.client.*;
+import com.deca.jelp.domain.customer.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -4,6 +4,6 @@ import com.deca.jelp.domain.jewel.TypeJewel;
 
 import java.util.List;
 
-public interface TypeJewelRepository {
+public interface TypeJewelRepository{
     List<TypeJewel> getTypes();
 }

@@ -1,13 +1,12 @@
 package com.deca.jelp.adapters.jewel.purchase.api;
 
-import com.deca.jelp.adapters.customer.dto.CustomerRequestDTO;
 import com.deca.jelp.adapters.jewel.purchase.dto.OtpRequestDTO;
 import com.deca.jelp.application.purchase.SendOtp;
-import com.deca.jelp.domain.client.Name;
+import com.deca.jelp.domain.customer.Name;
 import com.deca.jelp.domain.message.Message;
 import com.deca.jelp.domain.otp.Otp;
-import com.deca.jelp.domain.client.CellphoneNumber;
-import com.deca.jelp.domain.client.IdNumber;
+import com.deca.jelp.domain.customer.CellphoneNumber;
+import com.deca.jelp.domain.customer.IdNumber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

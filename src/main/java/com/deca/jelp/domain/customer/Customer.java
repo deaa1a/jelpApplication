@@ -1,12 +1,12 @@
-package com.deca.jelp.domain.client;
+package com.deca.jelp.domain.customer;
 
-public class Client {
+public class Customer {
 
     private IdNumber idNumber;
     private CellphoneNumber cellphoneNumber;
     private Name name;
 
-    public Client(IdNumber idNumber, CellphoneNumber cellphoneNumber, Name name) {
+    public Customer(IdNumber idNumber, CellphoneNumber cellphoneNumber, Name name) {
         this.idNumber = idNumber;
         this.cellphoneNumber = cellphoneNumber;
         this.name = name;

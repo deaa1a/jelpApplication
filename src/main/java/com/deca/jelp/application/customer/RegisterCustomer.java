@@ -1,7 +1,7 @@
 package com.deca.jelp.application.customer;
 
 import com.deca.jelp.domain.RegisterClient.persitence.CustomerRepository;
-import com.deca.jelp.domain.client.*;
+import com.deca.jelp.domain.customer.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

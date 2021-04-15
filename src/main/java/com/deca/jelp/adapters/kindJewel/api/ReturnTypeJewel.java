@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class KindJewel {
+public class ReturnTypeJewel {
 
     private GetTypesJewelToBuy getTypesJewelToBuy;
 
     @Autowired
-    KindJewel(GetTypesJewelToBuy getTypesJewelToBuy){
+    ReturnTypeJewel(GetTypesJewelToBuy getTypesJewelToBuy){
         this.getTypesJewelToBuy = getTypesJewelToBuy;
     }
 

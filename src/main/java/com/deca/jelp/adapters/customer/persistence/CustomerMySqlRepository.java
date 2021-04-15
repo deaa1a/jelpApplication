@@ -1,7 +1,7 @@
-package com.deca.jelp.adapters.customer;
+package com.deca.jelp.adapters.customer.persistence;
 
 import com.deca.jelp.domain.RegisterClient.persitence.CustomerRepository;
-import com.deca.jelp.domain.client.*;
+import com.deca.jelp.domain.customer.*;
 import org.springframework.stereotype.Repository;
 
 @Repository

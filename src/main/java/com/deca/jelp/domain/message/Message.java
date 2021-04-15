@@ -1,6 +1,6 @@
 package com.deca.jelp.domain.message;
 
-import com.deca.jelp.domain.client.Name;
+import com.deca.jelp.domain.customer.Name;
 import com.deca.jelp.domain.otp.Otp;
 
 public class Message{
