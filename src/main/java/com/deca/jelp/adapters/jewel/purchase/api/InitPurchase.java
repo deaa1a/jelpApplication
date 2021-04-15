@@ -1,10 +1,12 @@
 package com.deca.jelp.adapters.jewel.purchase.api;
 
-import com.deca.jelp.adapters.jewel.purchase.dto.InitPurchaseRequestDTO;
+import com.deca.jelp.adapters.jewel.purchase.dto.OtpRequestDTO;
 import com.deca.jelp.application.purchase.SendOtp;
+import com.deca.jelp.domain.customer.Name;
+import com.deca.jelp.domain.message.Message;
 import com.deca.jelp.domain.otp.Otp;
-import com.deca.jelp.domain.client.CellphoneNumber;
-import com.deca.jelp.domain.client.IdNumber;
+import com.deca.jelp.domain.customer.CellphoneNumber;
+import com.deca.jelp.domain.customer.IdNumber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +23,14 @@ public class InitPurchase {
     }
 
     @PostMapping(value = "/purchase/otp")
-    public void sendOtp(@RequestBody InitPurchaseRequestDTO request) {
-        sendOtp.Execute(new IdNumber(request.getIdNumber()), new CellphoneNumber(request.getCellphoneNumber()),new Otp(8));
+    public void sendOtp(@RequestBody OtpRequestDTO request) {
+        sendOtp.Execute(
+                new Name(request.getName()),
+                new IdNumber(request.getIdNumber()),
+                new CellphoneNumber(request.getCellphoneNumber()),
+                new Otp(4));
+
+
+        new Message(new Name(request.getName()), new Otp(4));
     }
 }

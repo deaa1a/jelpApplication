@@ -2,16 +2,27 @@ package com.deca.jelp.adapters.jewel.purchase.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class InitPurchaseRequestDTO {
+public class OtpRequestDTO {
 
+    @JsonProperty(value = "name")
+    private String name;
     @JsonProperty(value = "id_number")
     private String idNumber;
-    @JsonProperty(value = "cellphone_number")
+    @JsonProperty(value = "cellphone")
     private String cellphoneNumber;
 
-    public InitPurchaseRequestDTO(String idNumber,String cellphoneNumber){
+    public OtpRequestDTO(String name, String idNumber, String cellphoneNumber) {
+        this.name = name;
         this.idNumber = idNumber;
         this.cellphoneNumber = cellphoneNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getIdNumber() {

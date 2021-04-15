@@ -1,4 +1,4 @@
-package com.deca.jelp.domain.client;
+package com.deca.jelp.domain.customer;
 
 public class IdNumber {
     private String value;
