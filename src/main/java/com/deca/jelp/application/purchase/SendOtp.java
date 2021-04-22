@@ -1,5 +1,6 @@
 package com.deca.jelp.application.purchase;
 
+import com.deca.jelp.domain.customer.Customer;
 import com.deca.jelp.domain.customer.Name;
 import com.deca.jelp.domain.otp.Otp;
 import com.deca.jelp.domain.customer.CellphoneNumber;
@@ -21,10 +22,12 @@ public class SendOtp {
         this.sendMessage = sendMessage;
     }
 
-    public void Execute(Name name, IdNumber idNumber, CellphoneNumber cellphoneNumber, Otp otp){
-        otpRepository.save(name,idNumber,cellphoneNumber,otp);
+    public void Execute(Customer customer, Otp otp){
+        otpRepository.save(customer,otp);
+        otpRepository.save(customer);
         sendMessage.send(otp);
     }
+
 
 
     /**

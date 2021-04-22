@@ -2,6 +2,7 @@ package com.deca.jelp.adapters.jewel.purchase.api;
 
 import com.deca.jelp.adapters.jewel.purchase.dto.OtpRequestDTO;
 import com.deca.jelp.application.purchase.SendOtp;
+import com.deca.jelp.domain.customer.Customer;
 import com.deca.jelp.domain.customer.Name;
 import com.deca.jelp.domain.message.Message;
 import com.deca.jelp.domain.otp.Otp;
@@ -25,9 +26,7 @@ public class InitPurchase {
     @PostMapping(value = "/purchase/otp")
     public void sendOtp(@RequestBody OtpRequestDTO request) {
         sendOtp.Execute(
-                new Name(request.getName()),
-                new IdNumber(request.getIdNumber()),
-                new CellphoneNumber(request.getCellphoneNumber()),
+                new Customer(request.getIdNumber(), request.getCellphoneNumber(), request.getName()),
                 new Otp(4));
 
 

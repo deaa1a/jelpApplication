@@ -16,7 +16,7 @@ public class RegisterCustomer {
     }
 
     public void Execute (Name name, CellphoneNumber cellphoneNumber, IdNumber idNumber, DateOfIssue dateOfIssue, ExpeditionPlace expeditionPlace, CityResidence cityResidence){
-        customerRepository.save(
+        customerRepository.update(
                 name,
                 cellphoneNumber,
                 idNumber,

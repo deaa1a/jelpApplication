@@ -1,17 +1,23 @@
 package com.deca.jelp.adapters.jewel.purchase;
 
-import com.deca.jelp.domain.customer.CellphoneNumber;
-import com.deca.jelp.domain.customer.IdNumber;
-import com.deca.jelp.domain.customer.Name;
+import com.deca.jelp.domain.customer.Customer;
 import com.deca.jelp.domain.otp.Otp;
 import com.deca.jelp.domain.otp.persistence.OtpRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
 
 @Repository
 public class OtpMysqlRepository implements OtpRepository {
 
     @Override
-    public void save(Name name, IdNumber idNumber, CellphoneNumber cellphoneNumber, Otp otp) {
-        System.out.println("Save in DB "+ otp.getCode() +" - "+ cellphoneNumber.getValue());
+    public void save(Customer customer, Otp otp) {
+        System.out.println("Save in DB "+ otp.getCode() +" - "+ customer.getCellphoneNumber() );
     }
+
+    @Override
+    public void save(Customer customer) {
+        System.out.println("Save in DB" + " - "+customer.getName());
+    }
+
 }
