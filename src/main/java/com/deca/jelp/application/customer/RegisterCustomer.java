@@ -1,6 +1,9 @@
 package com.deca.jelp.application.customer;
 
-import com.deca.jelp.domain.RegisterClient.persitence.CustomerRepository;
+import com.deca.jelp.domain.customer.identificationCard.DateOfIssue;
+import com.deca.jelp.domain.customer.identificationCard.ExpeditionPlace;
+import com.deca.jelp.domain.customer.identificationCard.IdNumber;
+import com.deca.jelp.domain.customer.persistence.CustomerRepository;
 import com.deca.jelp.domain.customer.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,13 +18,7 @@ public class RegisterCustomer {
         this.customerRepository = customerRepository;
     }
 
-    public void Execute (Name name, CellphoneNumber cellphoneNumber, IdNumber idNumber, DateOfIssue dateOfIssue, ExpeditionPlace expeditionPlace, CityResidence cityResidence){
-        customerRepository.update(
-                name,
-                cellphoneNumber,
-                idNumber,
-                dateOfIssue,
-                expeditionPlace,
-                cityResidence);
+    public void Execute (Customer customer){
+        customerRepository.update(customer);
     }
 }

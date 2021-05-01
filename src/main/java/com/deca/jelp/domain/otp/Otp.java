@@ -30,11 +30,7 @@ public class Otp {
     }
 
     private boolean isValid(String recoveryOtp){
-        if(this.code.equals(recoveryOtp)){
-            return true;
-        }else {
-            return false;
-        }
+        return this.code.equals(recoveryOtp);
     }
 
     public String getCode() {

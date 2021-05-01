@@ -1,5 +1,17 @@
 package com.deca.jelp.adapters.customer.dto;
 
+import com.deca.jelp.domain.customer.CityResidence;
+import com.deca.jelp.domain.customer.Customer;
+import com.deca.jelp.domain.customer.CustomerId;
+import com.deca.jelp.domain.customer.Name;
+import com.deca.jelp.domain.customer.contactInformation.Address;
+import com.deca.jelp.domain.customer.contactInformation.CellphoneNumber;
+import com.deca.jelp.domain.customer.contactInformation.ContactInformation;
+import com.deca.jelp.domain.customer.contactInformation.Email;
+import com.deca.jelp.domain.customer.identificationCard.DateOfIssue;
+import com.deca.jelp.domain.customer.identificationCard.ExpeditionPlace;
+import com.deca.jelp.domain.customer.identificationCard.IdNumber;
+import com.deca.jelp.domain.customer.identificationCard.IdentificationCard;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.GeneratedValue;
@@ -8,10 +20,8 @@ import javax.persistence.Id;
 
 public class CustomerRequestDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCustomer;
-
+    @JsonProperty(value = "customer_id")
+    private String customerId;
     @JsonProperty(value = "first_name")
     private String firstName;
     @JsonProperty(value = "second_name")
@@ -30,18 +40,20 @@ public class CustomerRequestDTO {
     private String expeditionPlace;
     @JsonProperty(value = "place_of_birth")
     private String placeOfBirth;
+    private String address;
+    private String email;
+    @JsonProperty(value = "city_residence")
+    private String cityResidence;
 
 
-    public CustomerRequestDTO(String firstName, String secondName, String firstSurname, String secondSurname, String cellphoneNumber, String idNumber, String dateOfIssue, String expeditionPlace, String placeOfBirth) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.firstSurname = firstSurname;
-        this.secondSurname = secondSurname;
-        this.cellphoneNumber = cellphoneNumber;
-        this.idNumber = idNumber;
-        this.dateOfIssue = dateOfIssue;
-        this.expeditionPlace = expeditionPlace;
-        this.placeOfBirth = placeOfBirth;
+    public Customer toDomain(){
+        return new Customer(
+                new CustomerId(customerId),
+                new ContactInformation(new CellphoneNumber(cellphoneNumber),new Address(address),new Email(email)),
+                new Name(firstName,secondName,firstSurname,secondSurname),
+                new IdentificationCard(new DateOfIssue(dateOfIssue),new ExpeditionPlace(expeditionPlace),new IdNumber(idNumber)),
+                new CityResidence(cityResidence)
+                );
     }
 
     public String getFirstName() {

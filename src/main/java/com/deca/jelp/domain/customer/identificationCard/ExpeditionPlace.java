@@ -1,4 +1,4 @@
-package com.deca.jelp.domain.customer;
+package com.deca.jelp.domain.customer.identificationCard;
 
 public class ExpeditionPlace {
     private String value;
