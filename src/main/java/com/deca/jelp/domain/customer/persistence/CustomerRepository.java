@@ -6,6 +6,6 @@ import com.deca.jelp.domain.customer.identificationCard.ExpeditionPlace;
 import com.deca.jelp.domain.customer.identificationCard.IdNumber;
 
 public interface CustomerRepository {
-    void update(Name name, CellphoneNumber cellphoneNumber, IdNumber idNumber, DateOfIssue dateOfIssue, ExpeditionPlace expeditionPlace, CityResidence cityResidence);
+    void update(Customer customer);
     void save(Customer customer);
 }

@@ -18,13 +18,7 @@ public class RegisterCustomer {
         this.customerRepository = customerRepository;
     }
 
-    public void Execute (Name name, CellphoneNumber cellphoneNumber, IdNumber idNumber, DateOfIssue dateOfIssue, ExpeditionPlace expeditionPlace, CityResidence cityResidence){
-        customerRepository.update(
-                name,
-                cellphoneNumber,
-                idNumber,
-                dateOfIssue,
-                expeditionPlace,
-                cityResidence);
+    public void Execute (Customer customer){
+        customerRepository.update(customer);
     }
 }

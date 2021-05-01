@@ -4,9 +4,13 @@ import java.util.UUID;
 
 public class CustomerId {
 
-    private UUID value;
+    private String value;
 
     public CustomerId() {
-        this.value = UUID.randomUUID();
+        this.value = UUID.randomUUID().toString();
+    }
+
+    public CustomerId(String value) {
+        this.value = value;
     }
 }

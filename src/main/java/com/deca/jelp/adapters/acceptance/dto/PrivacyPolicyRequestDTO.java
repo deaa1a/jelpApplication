@@ -1,8 +1,8 @@
-package com.deca.jelp.adapters.jewel.purchase.dto;
+package com.deca.jelp.adapters.acceptance.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class OtpRequestDTO {
+public class PrivacyPolicyRequestDTO {
 
     @JsonProperty(value = "name")
     private String name;
@@ -11,11 +11,13 @@ public class OtpRequestDTO {
     @JsonProperty(value = "cellphone")
     private String cellphoneNumber;
 
-    public OtpRequestDTO(String name, String idNumber, String cellphoneNumber) {
+    public PrivacyPolicyRequestDTO(String name, String idNumber, String cellphoneNumber) {
         this.name = name;
         this.idNumber = idNumber;
         this.cellphoneNumber = cellphoneNumber;
     }
+
+
 
     public String getName() {
         return name;

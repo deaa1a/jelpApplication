@@ -1,8 +1,5 @@
 package com.deca.jelp.adapters.customer.persistence;
 
-import com.deca.jelp.domain.customer.identificationCard.DateOfIssue;
-import com.deca.jelp.domain.customer.identificationCard.ExpeditionPlace;
-import com.deca.jelp.domain.customer.identificationCard.IdNumber;
 import com.deca.jelp.domain.customer.persistence.CustomerRepository;
 import com.deca.jelp.domain.customer.*;
 import org.springframework.stereotype.Repository;
@@ -10,8 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CustomerMySqlRepository implements CustomerRepository {
     @Override
-    public void update(Name name, CellphoneNumber cellphoneNumber, IdNumber idNumber, DateOfIssue dateOfIssue, ExpeditionPlace expeditionPlace, CityResidence cityResidence) {
-        System.out.println("Update in DB " + name.getFirstName() + " " + name.getSecondName()+ " " + name.getFirstSurname() + " " + name.getSecondSurname() + " " + cellphoneNumber.getValue() + " " + idNumber.getValue() + " " + dateOfIssue.getValue() + " " + expeditionPlace.getValue() + " " + cityResidence.getValue());
+    public void update(Customer customer) {
+        System.out.println("Update in DB " + customer.getName().getFirstName() + " " + customer.getName().getSecondName()+ " " + customer.getName().getFirstSurname() + " " + customer.getName().getSecondSurname() + " " + customer.getContactInformation().getCellphoneNumber().getValue() + " " +customer.getIdentificationCard().getIdNumber().getValue() );
     }
 
     @Override

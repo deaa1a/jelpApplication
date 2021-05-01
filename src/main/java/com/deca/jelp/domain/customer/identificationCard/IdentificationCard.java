@@ -16,4 +16,8 @@ public class IdentificationCard {
     public IdentificationCard(IdNumber idNumber) {
         this.idNumber = idNumber;
     }
+
+    public IdNumber getIdNumber() {
+        return idNumber;
+    }
 }

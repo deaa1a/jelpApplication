@@ -20,11 +20,23 @@ public class Customer {
         this.identificationCard = identificationCard;
     }
 
+    public Customer(CustomerId customerId, ContactInformation contactInformation, Name name, IdentificationCard identificationCard, CityResidence cityResidence) {
+        this.customerId = customerId;
+        this.contactInformation = contactInformation;
+        this.name = name;
+        this.identificationCard = identificationCard;
+        this.cityResidence = cityResidence;
+    }
+
     public Name getName() {
         return name;
     }
 
     public ContactInformation getContactInformation() {
         return contactInformation;
+    }
+
+    public IdentificationCard getIdentificationCard() {
+        return identificationCard;
     }
 }
