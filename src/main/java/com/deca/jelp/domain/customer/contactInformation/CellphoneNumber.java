@@ -1,4 +1,4 @@
-package com.deca.jelp.domain.customer;
+package com.deca.jelp.domain.customer.contactInformation;
 
 public class CellphoneNumber {
     private String value;
@@ -10,4 +10,5 @@ public class CellphoneNumber {
     public String getValue() {
         return value;
     }
+
 }

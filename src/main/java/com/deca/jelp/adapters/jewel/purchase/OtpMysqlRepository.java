@@ -12,12 +12,7 @@ public class OtpMysqlRepository implements OtpRepository {
 
     @Override
     public void save(Customer customer, Otp otp) {
-        System.out.println("Save in DB "+ otp.getCode() +" - "+ customer.getCellphoneNumber() );
-    }
-
-    @Override
-    public void save(Customer customer) {
-        System.out.println("Save in DB" + " - "+customer.getName());
+        System.out.println("Save in DB "+ otp.getCode() +" - "+ customer.getContactInformation().getCellphoneNumbers().get(0));
     }
 
 }

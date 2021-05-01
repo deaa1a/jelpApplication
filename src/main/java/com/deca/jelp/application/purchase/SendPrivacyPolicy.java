@@ -1,39 +1,39 @@
 package com.deca.jelp.application.purchase;
 
 import com.deca.jelp.domain.customer.Customer;
-import com.deca.jelp.domain.customer.Name;
+import com.deca.jelp.domain.customer.persistence.CustomerRepository;
+import com.deca.jelp.domain.message.Message;
 import com.deca.jelp.domain.otp.Otp;
-import com.deca.jelp.domain.customer.CellphoneNumber;
-import com.deca.jelp.domain.customer.IdNumber;
 import com.deca.jelp.domain.otp.notification.service.SendMessage;
 import com.deca.jelp.domain.otp.persistence.OtpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SendOtp {
+public class SendPrivacyPolicy {
 
     private OtpRepository otpRepository;
+    private CustomerRepository customerRepository;
     private SendMessage sendMessage;
 
     @Autowired
-    public SendOtp(OtpRepository otpRepository, SendMessage sendMessage){
+    public SendPrivacyPolicy(OtpRepository otpRepository, CustomerRepository customerRepository , SendMessage sendMessage){
         this.otpRepository = otpRepository;
+        this.customerRepository = customerRepository;
         this.sendMessage = sendMessage;
+
     }
 
     public void Execute(Customer customer, Otp otp){
         otpRepository.save(customer,otp);
-        otpRepository.save(customer);
-        sendMessage.send(otp);
+        customerRepository.save(customer);
+        sendMessage.send(new Message(otp,customer.getName()));
     }
-
-
 
     /**
      * Delete me !!!
      * */
-    public SendOtp(){}
+    public SendPrivacyPolicy(){}
 
     /**
      * Delete me !!!
