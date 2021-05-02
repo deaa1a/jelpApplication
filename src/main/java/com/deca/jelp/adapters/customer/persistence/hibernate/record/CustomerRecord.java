@@ -1,28 +1,25 @@
 package com.deca.jelp.adapters.customer.persistence.hibernate.record;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "customer", schema = "Jelp")
+@Table(name = "Customer", schema = "Jelp")
 public class CustomerRecord {
 
     @Id
-    @Column(name = "customer_id")
-    private String customerId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "identification_id")
     private String identificationId;
 
 
-    public String getCustomerId (){
-        return customerId;
+    public Long getCustomerId (){
+        return id;
     }
 
-    public void setCustomerId (String customerId){
-        this.customerId = customerId;
+    public void setCustomerId (Long customerId){
+        this.id = customerId;
     }
 
     public String getIdentificationId () {

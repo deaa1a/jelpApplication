@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustomerDAO extends JpaRepository<CustomerRecord, String>{
+public interface CustomerDAO extends JpaRepository<CustomerRecord, Long>{
 
     /*@Query (
             "SELECT cm "
