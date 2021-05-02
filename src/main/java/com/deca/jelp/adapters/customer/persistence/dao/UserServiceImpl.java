@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService{
     @Override
     @Transactional(readOnly = true)
     public Optional<CustomerRecord> findBy(Long id) {
-        return customerDAO.findById(id);
+        return customerDAO.findById(id.toString());
     }
 
     @Override
@@ -42,6 +42,6 @@ public class UserServiceImpl implements UserService{
     @Override
     @Transactional
     public void deleteById(Long id) {
-        customerDAO.deleteById(id);
+        customerDAO.deleteById(id.toString());
     }
 }

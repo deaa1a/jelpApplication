@@ -39,4 +39,8 @@ public class Customer {
     public IdentificationCard getIdentificationCard() {
         return identificationCard;
     }
+
+    public CustomerId getCustomerId() {
+        return customerId;
+    }
 }

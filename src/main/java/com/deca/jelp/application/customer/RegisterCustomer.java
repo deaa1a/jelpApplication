@@ -1,8 +1,5 @@
 package com.deca.jelp.application.customer;
 
-import com.deca.jelp.domain.customer.identificationCard.DateOfIssue;
-import com.deca.jelp.domain.customer.identificationCard.ExpeditionPlace;
-import com.deca.jelp.domain.customer.identificationCard.IdNumber;
 import com.deca.jelp.domain.customer.persistence.CustomerRepository;
 import com.deca.jelp.domain.customer.*;
 import org.springframework.beans.factory.annotation.Autowired;

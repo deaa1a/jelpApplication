@@ -45,7 +45,7 @@ public class ConnectingDDBB {
             return ResponseEntity.notFound().build();
         }
 
-        user.get().setIdentificationId(customerDetails.getIdentificationId());
+        user.get().setNumberId(customerDetails.getNumberId());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user.get()));
 

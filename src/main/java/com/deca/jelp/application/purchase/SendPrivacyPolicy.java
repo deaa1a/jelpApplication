@@ -25,8 +25,8 @@ public class SendPrivacyPolicy {
     }
 
     public void Execute(Customer customer, Otp otp){
-        otpRepository.save(customer,otp);
         customerRepository.save(customer);
+        otpRepository.save(customer,otp);
         sendMessage.send(new Message(otp,customer.getName()));
     }
 

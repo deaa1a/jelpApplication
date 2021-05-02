@@ -4,20 +4,20 @@ public class IdentificationCard {
 
     private DateOfIssue dateOfIssue;
     private ExpeditionPlace expeditionPlace;
-    private IdNumber idNumber;
+    private NumberId numberId;
 
 
-    public IdentificationCard(DateOfIssue dateOfIssue, ExpeditionPlace expeditionPlace, IdNumber idNumber) {
+    public IdentificationCard(DateOfIssue dateOfIssue, ExpeditionPlace expeditionPlace, NumberId numberId) {
         this.dateOfIssue = dateOfIssue;
         this.expeditionPlace = expeditionPlace;
-        this.idNumber = idNumber;
+        this.numberId = numberId;
     }
 
-    public IdentificationCard(IdNumber idNumber) {
-        this.idNumber = idNumber;
+    public IdentificationCard(NumberId numberId) {
+        this.numberId = numberId;
     }
 
-    public IdNumber getIdNumber() {
-        return idNumber;
+    public NumberId getIdNumber() {
+        return numberId;
     }
 }

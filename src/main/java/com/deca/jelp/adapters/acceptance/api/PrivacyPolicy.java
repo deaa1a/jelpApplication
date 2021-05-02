@@ -1,11 +1,11 @@
-package com.deca.jelp.adapters.acceptance;
+package com.deca.jelp.adapters.acceptance.api;
 
 import com.deca.jelp.adapters.acceptance.dto.PrivacyPolicyRequestDTO;
 import com.deca.jelp.application.purchase.SendPrivacyPolicy;
 import com.deca.jelp.domain.customer.*;
 import com.deca.jelp.domain.customer.contactInformation.CellphoneNumber;
 import com.deca.jelp.domain.customer.contactInformation.ContactInformation;
-import com.deca.jelp.domain.customer.identificationCard.IdNumber;
+import com.deca.jelp.domain.customer.identificationCard.NumberId;
 import com.deca.jelp.domain.customer.identificationCard.IdentificationCard;
 import com.deca.jelp.domain.otp.Otp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class PrivacyPolicy {
                 new Customer(
                         new Name(request.getName()),
                         new ContactInformation(new CellphoneNumber(request.getCellphoneNumber())),
-                        new IdentificationCard(new IdNumber(request.getIdNumber()))),
+                        new IdentificationCard(new NumberId(request.getIdNumber()))),
                 new Otp(4));
     }
 }
