@@ -5,7 +5,7 @@ import com.deca.jelp.domain.customer.Customer;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Customer", schema = "Jelp")
+@Table(name = "customer", schema = "Jelp")
 public class CustomerRecord {
 
     @Id

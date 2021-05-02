@@ -1,33 +1,36 @@
 package com.deca.jelp.application.purchase;
 
 import com.deca.jelp.domain.customer.Customer;
+import com.deca.jelp.domain.customer.CustomerId;
 import com.deca.jelp.domain.customer.persistence.CustomerRepository;
 import com.deca.jelp.domain.message.Message;
 import com.deca.jelp.domain.otp.Otp;
 import com.deca.jelp.domain.otp.notification.service.SendMessage;
-import com.deca.jelp.domain.otp.persistence.OtpRepository;
+import com.deca.jelp.domain.otp.persistence.PrivacyPolicyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SendPrivacyPolicy {
 
-    private OtpRepository otpRepository;
+    private PrivacyPolicyRepository privacyPolicyRepository;
     private CustomerRepository customerRepository;
     private SendMessage sendMessage;
 
     @Autowired
-    public SendPrivacyPolicy(OtpRepository otpRepository, CustomerRepository customerRepository , SendMessage sendMessage){
-        this.otpRepository = otpRepository;
+    public SendPrivacyPolicy(PrivacyPolicyRepository privacyPolicyRepository, CustomerRepository customerRepository , SendMessage sendMessage){
+        this.privacyPolicyRepository = privacyPolicyRepository;
         this.customerRepository = customerRepository;
         this.sendMessage = sendMessage;
 
     }
 
-    public void Execute(Customer customer, Otp otp){
+    public CustomerId Execute(Customer customer, Otp otp){
         customerRepository.save(customer);
-        otpRepository.save(customer,otp);
+        privacyPolicyRepository.save(customer,otp);
         sendMessage.send(new Message(otp,customer.getName()));
+
+        return customer.getCustomerId();
     }
 
     /**
