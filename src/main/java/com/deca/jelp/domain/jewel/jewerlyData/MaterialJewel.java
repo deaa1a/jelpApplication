@@ -1,4 +1,4 @@
-package com.deca.jelp.domain.jewel;
+package com.deca.jelp.domain.jewel.jewerlyData;
 
 public class MaterialJewel {
 

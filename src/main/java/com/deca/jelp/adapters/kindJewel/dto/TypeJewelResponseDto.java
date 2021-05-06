@@ -1,6 +1,6 @@
 package com.deca.jelp.adapters.kindJewel.dto;
 
-import com.deca.jelp.domain.jewel.TypeJewel;
+import com.deca.jelp.domain.jewel.jewerlyData.TypeJewel;
 
 import java.util.List;
 import java.util.stream.Collectors;

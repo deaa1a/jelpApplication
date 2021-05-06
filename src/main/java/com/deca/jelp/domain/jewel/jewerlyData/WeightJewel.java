@@ -1,10 +1,10 @@
-package com.deca.jelp.domain.jewel;
+package com.deca.jelp.domain.jewel.jewerlyData;
 
-public class TypeJewel {
+public class WeightJewel {
 
     private String value;
 
-    public TypeJewel(String value){
+    public WeightJewel(String value){
         this.value = value;
     }
 

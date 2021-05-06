@@ -1,6 +1,7 @@
 package com.deca.jelp.adapters.acceptance.dto;
 
 import com.deca.jelp.domain.customer.Customer;
+import com.deca.jelp.domain.customer.CustomerId;
 import com.deca.jelp.domain.customer.Name;
 import com.deca.jelp.domain.customer.contactInformation.CellphoneNumber;
 import com.deca.jelp.domain.customer.contactInformation.ContactInformation;
@@ -18,10 +19,15 @@ public class PrivacyPolicyRequestDTO {
     @JsonProperty(value = "cellphone")
     private String cellphoneNumber;
 
-    public PrivacyPolicyRequestDTO(String firstName, String numberId, String cellphoneNumber) {
-        this.firstName = firstName;
-        this.numberId = numberId;
-        this.cellphoneNumber = cellphoneNumber;
+
+    public Customer toDomain(){
+        return new Customer(
+                new Name(firstName),
+                new ContactInformation(new CellphoneNumber(cellphoneNumber)),
+                new IdentificationCard(new NumberId(numberId))
+
+                );
+
     }
 
 
@@ -29,11 +35,24 @@ public class PrivacyPolicyRequestDTO {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getNumberId() {
         return numberId;
+    }
+
+    public void setNumberId(String numberId) {
+        this.numberId = numberId;
     }
 
     public String getCellphoneNumber() {
         return cellphoneNumber;
     }
+
+    public void setCellphoneNumber(String cellphoneNumber) {
+        this.cellphoneNumber = cellphoneNumber;
+    }
+
 }
