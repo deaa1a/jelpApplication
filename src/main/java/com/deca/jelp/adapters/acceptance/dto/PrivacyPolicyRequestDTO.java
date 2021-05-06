@@ -1,45 +1,39 @@
 package com.deca.jelp.adapters.acceptance.dto;
 
+import com.deca.jelp.domain.customer.Customer;
+import com.deca.jelp.domain.customer.Name;
+import com.deca.jelp.domain.customer.contactInformation.CellphoneNumber;
+import com.deca.jelp.domain.customer.contactInformation.ContactInformation;
+import com.deca.jelp.domain.customer.identificationCard.IdentificationCard;
+import com.deca.jelp.domain.customer.identificationCard.NumberId;
+import com.deca.jelp.domain.otp.Otp;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PrivacyPolicyRequestDTO {
 
-    @JsonProperty(value = "name")
-    private String name;
+    @JsonProperty(value = "first_name")
+    private String firstName;
     @JsonProperty(value = "id_number")
-    private String idNumber;
+    private String numberId;
     @JsonProperty(value = "cellphone")
     private String cellphoneNumber;
 
-    public PrivacyPolicyRequestDTO(String name, String idNumber, String cellphoneNumber) {
-        this.name = name;
-        this.idNumber = idNumber;
+    public PrivacyPolicyRequestDTO(String firstName, String numberId, String cellphoneNumber) {
+        this.firstName = firstName;
+        this.numberId = numberId;
         this.cellphoneNumber = cellphoneNumber;
     }
 
 
-
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIdNumber() {
-        return idNumber;
-    }
-
-    public void setIdNumber(String idNumber) {
-        this.idNumber = idNumber;
+    public String getNumberId() {
+        return numberId;
     }
 
     public String getCellphoneNumber() {
         return cellphoneNumber;
-    }
-
-    public void setCellphoneNumber(String cellphoneNumber) {
-        this.cellphoneNumber = cellphoneNumber;
     }
 }

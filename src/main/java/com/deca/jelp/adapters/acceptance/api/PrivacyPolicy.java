@@ -1,7 +1,6 @@
 package com.deca.jelp.adapters.acceptance.api;
 
 import com.deca.jelp.adapters.acceptance.dto.PrivacyPolicyRequestDTO;
-import com.deca.jelp.adapters.kindJewel.dto.TypeJewelResponseDto;
 import com.deca.jelp.application.purchase.SendPrivacyPolicy;
 import com.deca.jelp.domain.customer.*;
 import com.deca.jelp.domain.customer.contactInformation.CellphoneNumber;
@@ -30,9 +29,9 @@ public class PrivacyPolicy {
     public ResponseEntity<CustomerId> sendOtp(@RequestBody PrivacyPolicyRequestDTO request) {
         var customerId =  sendPrivacyPolicy.Execute(
                 new Customer(
-                        new Name(request.getName()),
+                        new Name(request.getFirstName()),
                         new ContactInformation(new CellphoneNumber(request.getCellphoneNumber())),
-                        new IdentificationCard(new NumberId(request.getIdNumber()))),
+                        new IdentificationCard(new NumberId(request.getNumberId()))),
                 new Otp(4));
 
         return new ResponseEntity<>( customerId, HttpStatus.CREATED);

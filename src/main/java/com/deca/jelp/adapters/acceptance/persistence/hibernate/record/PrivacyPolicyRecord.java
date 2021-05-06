@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.ZonedDateTime;
-import java.util.Optional;
 
 @Entity
 @Table(name= "privacy_policy", schema = "Jelp")
