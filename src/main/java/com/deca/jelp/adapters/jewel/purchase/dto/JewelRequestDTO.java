@@ -1,5 +1,6 @@
 package com.deca.jelp.adapters.jewel.purchase.dto;
 
+import com.deca.jelp.domain.jewel.jewerlyData.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class JewelRequestDTO {
@@ -13,11 +14,13 @@ public class JewelRequestDTO {
     @JsonProperty(value = "material_jewel")
     private String materialJewel;
 
-    public JewelRequestDTO(String typeJewel, String caratsJewel, String weightJewel, String materialJewel) {
-        this.typeJewel = typeJewel;
-        this.caratsJewel = caratsJewel;
-        this.weightJewel = weightJewel;
-        this.materialJewel = materialJewel;
+    public JewelryInformation toDomain(){
+        return new JewelryInformation(
+                new TypeJewel(typeJewel),
+                new CaratsJewel(caratsJewel),
+                new WeightJewel(weightJewel),
+                new MaterialJewel(materialJewel)
+        );
     }
 
     public String getTypeJewel() {
