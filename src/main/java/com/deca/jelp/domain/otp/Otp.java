@@ -1,13 +1,21 @@
 package com.deca.jelp.domain.otp;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Random;
 
 public class Otp {
+
     private String code;
+    private Boolean accepted;
+    private ZonedDateTime createDate;
+    private ZonedDateTime updateDate;
 
 
     public Otp(int lenghtOtp) {
         this.code = generateCode(lenghtOtp);
+        this.accepted = false;
+        this.createDate = ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/Bogota"));
     }
 
     public Otp(String code){
@@ -19,6 +27,14 @@ public class Otp {
                 .ints(1,calculateInitialRange(lenghtOtp), calculateFinalRange(lenghtOtp))
                 .findFirst()
                 .getAsInt());
+    }
+
+    public Boolean getAccepted() {
+        return accepted;
+    }
+
+    public ZonedDateTime getCreateDate() {
+        return createDate;
     }
 
     private int calculateInitialRange(int size){

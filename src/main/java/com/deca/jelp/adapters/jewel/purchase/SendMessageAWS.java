@@ -11,6 +11,6 @@ public class SendMessageAWS implements SendMessage {
     @Override
     public boolean send(Message message) {
         System.out.println(message);
-        return false;
+        return true;
     }
 }

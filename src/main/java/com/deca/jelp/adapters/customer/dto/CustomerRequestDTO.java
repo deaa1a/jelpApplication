@@ -10,13 +10,9 @@ import com.deca.jelp.domain.customer.contactInformation.ContactInformation;
 import com.deca.jelp.domain.customer.contactInformation.Email;
 import com.deca.jelp.domain.customer.identificationCard.DateOfIssue;
 import com.deca.jelp.domain.customer.identificationCard.ExpeditionPlace;
-import com.deca.jelp.domain.customer.identificationCard.IdNumber;
+import com.deca.jelp.domain.customer.identificationCard.NumberId;
 import com.deca.jelp.domain.customer.identificationCard.IdentificationCard;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 public class CustomerRequestDTO {
 
@@ -51,7 +47,7 @@ public class CustomerRequestDTO {
                 new CustomerId(customerId),
                 new ContactInformation(new CellphoneNumber(cellphoneNumber),new Address(address),new Email(email)),
                 new Name(firstName,secondName,firstSurname,secondSurname),
-                new IdentificationCard(new DateOfIssue(dateOfIssue),new ExpeditionPlace(expeditionPlace),new IdNumber(idNumber)),
+                new IdentificationCard(new DateOfIssue(dateOfIssue),new ExpeditionPlace(expeditionPlace),new NumberId(idNumber)),
                 new CityResidence(cityResidence)
                 );
     }
@@ -126,5 +122,29 @@ public class CustomerRequestDTO {
 
     public void setPlaceOfBirth(String placeOfBirth) {
         this.placeOfBirth = placeOfBirth;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCityResidence() {
+        return cityResidence;
+    }
+
+    public void setCityResidence(String cityResidence) {
+        this.cityResidence = cityResidence;
     }
 }
