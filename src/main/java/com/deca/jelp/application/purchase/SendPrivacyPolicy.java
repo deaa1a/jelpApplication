@@ -6,6 +6,7 @@ import com.deca.jelp.domain.customer.persistence.CustomerRepository;
 import com.deca.jelp.domain.message.Message;
 import com.deca.jelp.domain.otp.Otp;
 import com.deca.jelp.domain.otp.notification.service.SendMessage;
+import com.deca.jelp.domain.otp.persistence.PrivacyPolicyAcceptanceRepository;
 import com.deca.jelp.domain.otp.persistence.PrivacyPolicyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

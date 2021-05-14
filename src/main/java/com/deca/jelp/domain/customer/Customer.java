@@ -2,10 +2,7 @@ package com.deca.jelp.domain.customer;
 
 import com.deca.jelp.domain.customer.contactInformation.ContactInformation;
 import com.deca.jelp.domain.customer.identificationCard.IdentificationCard;
-import com.deca.jelp.domain.customer.identificationCard.NumberId;
 import com.deca.jelp.domain.otp.Otp;
-
-import java.util.UUID;
 
 public class Customer {
 
@@ -14,6 +11,7 @@ public class Customer {
     private Name name;
     private IdentificationCard identificationCard;
     private CityResidence cityResidence;
+    private Otp otp;
 
     public Customer(Name name, ContactInformation contactInformation, IdentificationCard identificationCard) {
         this.customerId = new CustomerId();
@@ -30,11 +28,13 @@ public class Customer {
         this.cityResidence = cityResidence;
     }
 
-    public Customer(Name name, IdentificationCard identificationCard, ContactInformation contactInformation, Otp otp) {
-        this.name = name;
-        this.identificationCard = identificationCard;
-        this.contactInformation = contactInformation;
+    public Customer( CustomerId customerId,Otp otp) {
+        this.otp = otp;
+        this.customerId = customerId;
     }
+
+
+
 
     public Name getName() {
         return name;
@@ -51,4 +51,7 @@ public class Customer {
     public CustomerId getCustomerId() {
         return customerId;
     }
+
+    public Otp getOtp(){return otp;}
+
 }

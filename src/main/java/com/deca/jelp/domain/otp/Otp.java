@@ -16,6 +16,7 @@ public class Otp {
         this.code = generateCode(lenghtOtp);
         this.accepted = false;
         this.createDate = ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/Bogota"));
+
     }
 
     public Otp(String code){

@@ -23,4 +23,6 @@ public class PrivacyPolicyMysqlRepository implements PrivacyPolicyRepository {
         privacyPolicyDAO.save(PrivacyPolicyRecord.from(customer, otp));
     }
 
+
+
 }
