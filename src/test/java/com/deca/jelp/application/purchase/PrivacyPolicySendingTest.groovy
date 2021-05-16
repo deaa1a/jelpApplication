@@ -2,7 +2,7 @@ package com.deca.jelp.application.purchase
 
 import spock.lang.Specification
 
-class PrivacyPolicyTest extends Specification{
+class PrivacyPolicySendingTest extends Specification{
 
     def 'It should send otp'(){
         given:

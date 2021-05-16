@@ -8,8 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CustomerDAO extends JpaRepository<CustomerRecord, String>{
 
-    /*@Query (
-            "SELECT cm "
-    )*/
+
 
 }

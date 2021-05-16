@@ -1,16 +1,14 @@
 package com.deca.jelp.adapters.acceptance.dto;
 
 import com.deca.jelp.domain.customer.Customer;
-import com.deca.jelp.domain.customer.CustomerId;
 import com.deca.jelp.domain.customer.Name;
 import com.deca.jelp.domain.customer.contactInformation.CellphoneNumber;
 import com.deca.jelp.domain.customer.contactInformation.ContactInformation;
 import com.deca.jelp.domain.customer.identificationCard.IdentificationCard;
 import com.deca.jelp.domain.customer.identificationCard.NumberId;
-import com.deca.jelp.domain.otp.Otp;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class PrivacyPolicyRequestDTO {
+public class  PrivacyPolicyRequestDTO {
 
     @JsonProperty(value = "first_name")
     private String firstName;

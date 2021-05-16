@@ -12,5 +12,5 @@ CREATE TABLE privacy_policy (
             create_date DATETIME NOT NULL,
             update_date DATETIME,
             accepted BOOLEAN NOT NULL,
-                PRIMARY KEY (customer_id, otp)
+            PRIMARY KEY (customer_id, otp)
 );
