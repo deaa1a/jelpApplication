@@ -8,6 +8,5 @@ import java.util.List;
 
 public interface PrivacyPolicyRepository {
     void save(Customer customer, PrivacyPolicy privacyPolicy);
-    /*List<PrivacyPolicy> getOtps(CustomerId customerId);
-    void updatePrivacyPolicy(PrivacyPolicy privacyPolicy, CustomerId customerId);*/
-}
+    List<PrivacyPolicy> getOtps(CustomerId customerId);
+    void updatePrivacyPolicy(PrivacyPolicy privacyPolicy, CustomerId customerId);}

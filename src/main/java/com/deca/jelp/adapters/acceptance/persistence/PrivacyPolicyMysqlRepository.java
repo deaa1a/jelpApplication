@@ -27,7 +27,7 @@ public class PrivacyPolicyMysqlRepository implements PrivacyPolicyRepository {
         privacyPolicyDAO.save(PrivacyPolicyRecord.from(customer, privacyPolicy));
     }
 
-   /* @Override
+    @Override
     public List<PrivacyPolicy> getOtps(CustomerId customerId) {
         return privacyPolicyDAO.findByCustomerId(customerId.getValue())
                 .stream().map(PrivacyPolicyRecord::toDomain)
@@ -36,8 +36,8 @@ public class PrivacyPolicyMysqlRepository implements PrivacyPolicyRepository {
 
     @Override
     public void updatePrivacyPolicy(PrivacyPolicy privacyPolicy,CustomerId customerId) {
-        privacyPolicyDAO.updateByCustomerId(privacyPolicy.getUpdateDate(),privacyPolicy.getAccepted(),customerId.getValue());
-    }*/
+            privacyPolicyDAO.updateByCustomerId(privacyPolicy.getUpdateDate(),privacyPolicy.getAccepted(),customerId.getValue());
+    }
 
 
 }

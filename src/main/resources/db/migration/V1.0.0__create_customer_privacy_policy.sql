@@ -8,9 +8,9 @@ CREATE TABLE customer (
 
 CREATE TABLE privacy_policy (
             customer_id VARCHAR (100),
-            privacyPolicy VARCHAR (4),
+            otp VARCHAR (4),
             create_date DATETIME NOT NULL,
             update_date DATETIME,
             accepted BOOLEAN NOT NULL,
-            PRIMARY KEY (customer_id, privacyPolicy)
+            PRIMARY KEY (customer_id, otp)
 );
