@@ -4,9 +4,8 @@ import com.deca.jelp.domain.customer.Customer;
 import com.deca.jelp.domain.customer.CustomerId;
 import com.deca.jelp.domain.customer.persistence.CustomerRepository;
 import com.deca.jelp.domain.message.Message;
-import com.deca.jelp.domain.otp.Otp;
+import com.deca.jelp.domain.otp.PrivacyPolicy;
 import com.deca.jelp.domain.otp.notification.service.SendMessage;
-import com.deca.jelp.domain.otp.persistence.PrivacyPolicyAcceptanceRepository;
 import com.deca.jelp.domain.otp.persistence.PrivacyPolicyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,10 +25,10 @@ public class SendPrivacyPolicy {
 
     }
 
-    public CustomerId Execute(Customer customer, Otp otp){
+    public CustomerId Execute(Customer customer, PrivacyPolicy privacyPolicy){
         customerRepository.save(customer);
-        privacyPolicyRepository.save(customer,otp);
-        sendMessage.send(new Message(otp,customer.getName()));
+        privacyPolicyRepository.save(customer, privacyPolicy);
+        sendMessage.send(new Message(privacyPolicy,customer.getName()));
 
         return customer.getCustomerId();
     }

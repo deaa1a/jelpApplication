@@ -2,6 +2,7 @@ package com.deca.jelp.adapters.acceptance.api;
 
 import com.deca.jelp.adapters.acceptance.dto.PrivacyPolicyAcceptanceDTO;
 import com.deca.jelp.application.otp.VerifyOtp;
+import com.deca.jelp.domain.customer.CustomerId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,8 +19,7 @@ public class PrivacyPolicyAcceptance {
     }
 
     @PostMapping(value = "/privacy-policy/acceptance")
-    public void verifyOtp (@RequestBody PrivacyPolicyAcceptanceDTO request){
-        verifyOtp.Execute(request.toDomain());
+    public void verifyOtp (@RequestBody PrivacyPolicyAcceptanceDTO request) throws Exception {
+        verifyOtp.Execute(new CustomerId(request.getCustomerId()),request.toPrivacyPolicyDomain());
     }
-
 }

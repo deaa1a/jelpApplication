@@ -12,7 +12,6 @@ import com.deca.jelp.domain.customer.identificationCard.DateOfIssue;
 import com.deca.jelp.domain.customer.identificationCard.ExpeditionPlace;
 import com.deca.jelp.domain.customer.identificationCard.NumberId;
 import com.deca.jelp.domain.customer.identificationCard.IdentificationCard;
-import com.deca.jelp.domain.otp.Otp;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CustomerRequestDTO {

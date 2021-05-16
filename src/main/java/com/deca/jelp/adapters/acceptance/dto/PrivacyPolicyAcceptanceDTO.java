@@ -1,9 +1,10 @@
 package com.deca.jelp.adapters.acceptance.dto;
 
-import com.deca.jelp.domain.customer.Customer;
-import com.deca.jelp.domain.customer.CustomerId;
-import com.deca.jelp.domain.otp.Otp;
+import com.deca.jelp.domain.otp.PrivacyPolicy;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 public class PrivacyPolicyAcceptanceDTO {
 
@@ -13,11 +14,10 @@ public class PrivacyPolicyAcceptanceDTO {
 
 
 
-    public Customer toDomain(){
-       return new Customer(
-               new CustomerId(customerId),
-               new Otp(otp)
-              );
+    public PrivacyPolicy toPrivacyPolicyDomain(){
+       return new PrivacyPolicy(
+               this.otp ,  ZonedDateTime.now().withZoneSameInstant(ZoneId.of("America/Bogota"))
+       );
     }
 
 

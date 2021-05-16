@@ -1,7 +1,7 @@
 package com.deca.jelp.adapters.acceptance.persistence.hibernate.record;
 
 import com.deca.jelp.domain.customer.Customer;
-import com.deca.jelp.domain.otp.Otp;
+import com.deca.jelp.domain.otp.PrivacyPolicy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,13 +26,17 @@ public class PrivacyPolicyRecord {
 
     private Boolean accepted;
 
-    public static PrivacyPolicyRecord from(Customer customer, Otp otp){
+    public PrivacyPolicy toDomain(){
+        return new PrivacyPolicy(otp, accepted, createDate, updateDate);
+    }
+
+    public static PrivacyPolicyRecord from(Customer customer, PrivacyPolicy privacyPolicy){
         PrivacyPolicyRecord record = new PrivacyPolicyRecord();
 
         record.setCustomerId(customer.getCustomerId().getValue());
-        record.setOtp(otp.getCode());
-        record.setCreateDate(otp.getCreateDate());
-        record.setAccepted(otp.getAccepted());
+        record.setOtp(privacyPolicy.getCode());
+        record.setCreateDate(privacyPolicy.getCreateDate());
+        record.setAccepted(privacyPolicy.getAccepted());
 
         return record;
     }
@@ -76,4 +80,6 @@ public class PrivacyPolicyRecord {
     public void setAccepted(Boolean accepted) {
         this.accepted = accepted;
     }
+
+
 }
