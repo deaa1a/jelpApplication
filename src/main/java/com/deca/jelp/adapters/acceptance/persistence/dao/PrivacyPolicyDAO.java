@@ -13,10 +13,12 @@ import java.util.List;
 
 @Repository
 public interface PrivacyPolicyDAO extends JpaRepository <PrivacyPolicyRecord, String> {
+
     @Transactional
     @Modifying
     @Query(
-            "UPDATE PrivacyPolicyRecord pp SET pp.updateDate = :update_date, pp.accepted = :accepted WHERE pp.customerId = :customer_id")
+            "UPDATE PrivacyPolicyRecord pp SET pp.updateDate = :update_date, pp.accepted = :accepted WHERE pp.customerId = :customer_id"
+    )
     void updateByCustomerId(
             @Param("update_date") ZonedDateTime updateDate,
             @Param("accepted") Boolean accepted,

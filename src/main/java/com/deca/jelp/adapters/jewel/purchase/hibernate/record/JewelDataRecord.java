@@ -1,28 +1,40 @@
-package com.deca.jelp.adapters.jewel.purchase.dto;
+package com.deca.jelp.adapters.jewel.purchase.hibernate.record;
 
-import com.deca.jelp.domain.jewel.jewerlyData.*;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class JewelRequestDTO {
+@Entity
+@Table(name = "jewel_data", schema = "Jelp")
+public class JewelDataRecord {
+    @Id
+    @Column(name = "customer_id")
+    private String customerId;
 
-    @JsonProperty(value = "type_jewel")
+    @Column(name = "type_jewel")
     private String typeJewel;
-    @JsonProperty(value = "carats_jewel")
+
+    @Column(name = "carats_jewel")
     private String caratsJewel;
-    @JsonProperty(value = "weight_jewel")
+
+    @Column(name = "weight_jewel")
     private String weightJewel;
-    @JsonProperty(value = "material_jewel")
+
+    @Column(name = "material_jewel")
     private String materialJewel;
 
-    public JewelryInformation toDomain(){
-        return new JewelryInformation(
-                new TypeJewel(typeJewel),
-                new CaratsJewel(caratsJewel),
-                new WeightJewel(weightJewel),
-                new MaterialJewel(materialJewel)
-        );
+
+
+
+
+    public String getCustomerId() {
+        return customerId;
     }
 
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
 
     public String getTypeJewel() {
         return typeJewel;

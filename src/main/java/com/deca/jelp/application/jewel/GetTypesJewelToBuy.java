@@ -17,7 +17,7 @@ public class GetTypesJewelToBuy {
         this.typeJewelRepository = typeJewelRepository;
     }
 
-    public List<TypeJewel> Execute(){
+    public List<TypeJewel> execute(){
         return typeJewelRepository.getTypes();
     }
 

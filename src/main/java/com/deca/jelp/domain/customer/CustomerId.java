@@ -10,6 +10,8 @@ public class CustomerId {
         this.value = UUID.randomUUID().toString();
     }
 
+
+
     public CustomerId(String value) {
         this.value = value;
     }

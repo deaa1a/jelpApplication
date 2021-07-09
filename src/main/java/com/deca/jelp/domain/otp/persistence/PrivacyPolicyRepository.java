@@ -6,6 +6,7 @@ import com.deca.jelp.domain.otp.PrivacyPolicy;
 
 import java.util.List;
 
+
 public interface PrivacyPolicyRepository {
     void save(Customer customer, PrivacyPolicy privacyPolicy);
     List<PrivacyPolicy> getOtps(CustomerId customerId);
