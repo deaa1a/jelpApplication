@@ -17,7 +17,7 @@ public class JewelData {
         this.saveJewel = saveJewel;
     }
 
-    @PostMapping(value = "jewel")
+    @PostMapping(value = "/jewel")
     public void jewelRecord(@RequestBody JewelRequestDTO request){
         saveJewel.execute(request.toDomain());
     }

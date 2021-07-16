@@ -19,13 +19,14 @@ public interface JewelDataDAO extends JpaRepository<JewelDataRecord, String> {
                     "jd.caratsJewel = :carats_jewel," +
                     " jd.weightJewel = :weight_jewel," +
                     " jd.materialJewel = :material_jewel " +
-                    "WHERE jd.customerId = :customer_id"
+                    "WHERE jd.customerId = :customer_id "
     )
     void saveJewelDataOfCustomer(
             @Param("type_jewel") String typeJewel,
             @Param("carats_jewel") String caratsJewel,
             @Param("weight_jewel") String weightJewel,
-            @Param("material_jewel ") String materialJewel
+            @Param("material_jewel") String materialJewel,
+            @Param("customer_id") String customerId
     );
 
 
