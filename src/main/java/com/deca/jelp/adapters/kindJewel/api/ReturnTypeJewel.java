@@ -22,7 +22,7 @@ public class ReturnTypeJewel {
 
     @GetMapping(value = "jewels/type")
     public ResponseEntity<List<TypeJewelResponseDto>> getJewel(){
-        return new ResponseEntity<>( TypeJewelResponseDto.from(getTypesJewelToBuy.Execute()), HttpStatus.ACCEPTED);
+        return new ResponseEntity<>( TypeJewelResponseDto.from(getTypesJewelToBuy.execute()), HttpStatus.ACCEPTED);
     }
 
 

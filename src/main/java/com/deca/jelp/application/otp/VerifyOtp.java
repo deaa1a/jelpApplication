@@ -21,17 +21,16 @@ public class VerifyOtp {
 
     public void Execute(CustomerId customerId, PrivacyPolicy privacyPolicyInput) throws Exception {
        var privacyPolicies = privacyPolicyRepository.getOtps(customerId);
-       var privacyPolicyFound =privacyPolicies.stream()
-               .filter(privacyPolicyResult -> privacyPolicyResult.isEqualTo(privacyPolicyInput.getCode()))
-               .findFirst();
+           var privacyPolicyFound =privacyPolicies.stream()
+                   .filter(privacyPolicyResult -> privacyPolicyResult.isEqualTo(privacyPolicyInput.getCode()))
+                   .findFirst();
 
        if (privacyPolicyFound.isPresent()){
             if (privacyPolicyFound.get().isValidCode(privacyPolicyInput.getUpdateDate())){
                     privacyPolicyFound.get().setAccepted(true);
                     privacyPolicyFound.get().setUpdateDate(privacyPolicyInput.getUpdateDate());
                 privacyPolicyRepository.updatePrivacyPolicy(privacyPolicyFound.get(),customerId);
-
-            }else {
+            } {
                 throw new InvalidOtpException();
             }
 
@@ -41,4 +40,3 @@ public class VerifyOtp {
 
        }
     }
-

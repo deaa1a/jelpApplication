@@ -1,7 +1,7 @@
 package com.deca.jelp.domain.customer;
 
-import com.deca.jelp.domain.customer.contactInformation.ContactInformation;
-import com.deca.jelp.domain.customer.identificationCard.IdentificationCard;
+import com.deca.jelp.domain.customer.contactInformation.*;
+import com.deca.jelp.domain.customer.identificationCard.*;
 import com.deca.jelp.domain.otp.PrivacyPolicy;
 
 public class Customer {
@@ -10,7 +10,6 @@ public class Customer {
     private ContactInformation contactInformation;
     private Name name;
     private IdentificationCard identificationCard;
-    private CityResidence cityResidence;
     private PrivacyPolicy privacyPolicy;
 
     public Customer(Name name, ContactInformation contactInformation, IdentificationCard identificationCard) {
@@ -20,12 +19,11 @@ public class Customer {
         this.identificationCard = identificationCard;
     }
 
-    public Customer(CustomerId customerId, ContactInformation contactInformation, Name name, IdentificationCard identificationCard, CityResidence cityResidence) {
+    public Customer(Name name,ContactInformation contactInformation, IdentificationCard identificationCard, CustomerId customerId) {
         this.customerId = customerId;
         this.contactInformation = contactInformation;
         this.name = name;
         this.identificationCard = identificationCard;
-        this.cityResidence = cityResidence;
     }
 
     public Customer(CustomerId customerId, PrivacyPolicy privacyPolicy) {
@@ -33,7 +31,12 @@ public class Customer {
         this.customerId = customerId;
     }
 
+    public Customer(Name name, CustomerId customerId) {
+        this.name = name;
+        this.customerId= customerId;
+    }
 
+   
 
 
     public Name getName() {

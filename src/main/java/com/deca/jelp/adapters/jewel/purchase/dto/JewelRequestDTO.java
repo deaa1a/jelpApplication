@@ -1,10 +1,13 @@
 package com.deca.jelp.adapters.jewel.purchase.dto;
 
+import com.deca.jelp.domain.customer.CustomerId;
 import com.deca.jelp.domain.jewel.jewerlyData.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class JewelRequestDTO {
 
+    @JsonProperty(value = "customer_id")
+    private String customerId;
     @JsonProperty(value = "type_jewel")
     private String typeJewel;
     @JsonProperty(value = "carats_jewel")
@@ -19,8 +22,18 @@ public class JewelRequestDTO {
                 new TypeJewel(typeJewel),
                 new CaratsJewel(caratsJewel),
                 new WeightJewel(weightJewel),
-                new MaterialJewel(materialJewel)
+                new MaterialJewel(materialJewel),
+                new CustomerId(customerId)
         );
+    }
+
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public String getTypeJewel() {
