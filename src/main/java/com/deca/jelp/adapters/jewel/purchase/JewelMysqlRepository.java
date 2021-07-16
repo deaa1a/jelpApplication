@@ -1,5 +1,6 @@
 package com.deca.jelp.adapters.jewel.purchase;
 
+import com.deca.jelp.adapters.jewel.purchase.hibernate.record.JewelDataRecord;
 import com.deca.jelp.adapters.jewel.purchase.persistence.dao.JewelDataDAO;
 import com.deca.jelp.domain.jewel.jewerlyData.JewelryInformation;
 import com.deca.jelp.domain.jewel.persistence.JewelRepository;
@@ -18,8 +19,6 @@ public class JewelMysqlRepository implements JewelRepository {
 
     @Override
     public void save(JewelryInformation jewelryInformation) {
-            jewelDataDAO.saveJewelDataOfCustomer(
-                        jewelryInformation.getTypeJewel().getValue(), jewelryInformation.getCaratsJewel().getValue(), jewelryInformation.getWeightJewel().getValue(), jewelryInformation.getMaterialJewel().getValue()
-                    );
+            jewelDataDAO.save(JewelDataRecord.from(jewelryInformation));
     }
 }

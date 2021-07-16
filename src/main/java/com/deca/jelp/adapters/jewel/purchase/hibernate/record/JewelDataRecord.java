@@ -1,5 +1,7 @@
 package com.deca.jelp.adapters.jewel.purchase.hibernate.record;
 
+import com.deca.jelp.domain.jewel.jewerlyData.JewelryInformation;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,7 +27,17 @@ public class JewelDataRecord {
     private String materialJewel;
 
 
+    public static JewelDataRecord from(JewelryInformation jewelryInformation){
+        JewelDataRecord record = new JewelDataRecord();
 
+        record.setCustomerId(jewelryInformation.getCustomerId().getValue());
+        record.setCaratsJewel(jewelryInformation.getCaratsJewel().getValue());
+        record.setMaterialJewel(jewelryInformation.getMaterialJewel().getValue());
+        record.setTypeJewel(jewelryInformation.getTypeJewel().getValue());
+        record.setWeightJewel(jewelryInformation.getWeightJewel().getValue());
+
+        return record;
+    }
 
 
     public String getCustomerId() {
