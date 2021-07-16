@@ -30,7 +30,7 @@ public class VerifyOtp {
                     privacyPolicyFound.get().setAccepted(true);
                     privacyPolicyFound.get().setUpdateDate(privacyPolicyInput.getUpdateDate());
                 privacyPolicyRepository.updatePrivacyPolicy(privacyPolicyFound.get(),customerId);
-            }else {
+            } {
                 throw new InvalidOtpException();
             }
 
