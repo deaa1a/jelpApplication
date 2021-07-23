@@ -1,6 +1,6 @@
 package com.deca.jelp.adapters.kindJewel;
 
-import com.deca.jelp.domain.jewel.jewerlyData.TypeJewel;
+import com.deca.jelp.domain.jewel.jewelData.TypeJewel;
 import com.deca.jelp.domain.jewel.persistence.TypeJewelRepository;
 import org.springframework.stereotype.Repository;
 

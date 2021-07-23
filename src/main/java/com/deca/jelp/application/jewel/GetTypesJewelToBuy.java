@@ -1,6 +1,6 @@
 package com.deca.jelp.application.jewel;
 
-import com.deca.jelp.domain.jewel.jewerlyData.TypeJewel;
+import com.deca.jelp.domain.jewel.jewelData.TypeJewel;
 import com.deca.jelp.domain.jewel.persistence.TypeJewelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

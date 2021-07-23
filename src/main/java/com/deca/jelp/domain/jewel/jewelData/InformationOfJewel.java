@@ -1,20 +1,22 @@
-package com.deca.jelp.domain.jewel.jewerlyData;
+package com.deca.jelp.domain.jewel.jewelData;
 
 import com.deca.jelp.domain.customer.CustomerId;
 
-public class JewelryInformation {
+public class InformationOfJewel {
 
     private CustomerId customerId;
     private CaratsJewel caratsJewel;
     private MaterialJewel materialJewel;
     private TypeJewel typeJewel;
     private WeightJewel weightJewel;
+    private Nationality nationality;
 
-    public JewelryInformation(TypeJewel typeJewel, CaratsJewel caratsJewel, WeightJewel weightJewel, MaterialJewel materialJewel, CustomerId customerId) {
+    public InformationOfJewel(TypeJewel typeJewel, CaratsJewel caratsJewel, WeightJewel weightJewel, MaterialJewel materialJewel, Nationality nationality, CustomerId customerId) {
         this.caratsJewel = caratsJewel;
         this.materialJewel = materialJewel;
         this.typeJewel = typeJewel;
         this.weightJewel = weightJewel;
+        this.nationality = nationality;
         this.customerId = customerId;
     }
 
@@ -38,5 +40,9 @@ public class JewelryInformation {
 
     public WeightJewel getWeightJewel() {
         return weightJewel;
+    }
+
+    public Nationality getNationality() {
+        return nationality;
     }
 }

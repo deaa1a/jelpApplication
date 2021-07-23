@@ -1,0 +1,1 @@
+ALTER TABLE jewel_data ADD nationality VARCHAR (15);

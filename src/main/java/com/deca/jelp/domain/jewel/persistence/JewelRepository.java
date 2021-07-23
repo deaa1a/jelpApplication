@@ -1,7 +1,7 @@
 package com.deca.jelp.domain.jewel.persistence;
 
-import com.deca.jelp.domain.jewel.jewerlyData.JewelryInformation;
+import com.deca.jelp.domain.jewel.jewelData.InformationOfJewel;
 
 public interface JewelRepository {
-    void save(JewelryInformation jewelryInformation);
+    void save(InformationOfJewel informationOfJewel);
 }

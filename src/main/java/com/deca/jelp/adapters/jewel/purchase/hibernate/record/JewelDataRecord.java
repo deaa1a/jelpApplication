@@ -1,6 +1,6 @@
 package com.deca.jelp.adapters.jewel.purchase.hibernate.record;
 
-import com.deca.jelp.domain.jewel.jewerlyData.JewelryInformation;
+import com.deca.jelp.domain.jewel.jewelData.InformationOfJewel;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,15 +26,19 @@ public class JewelDataRecord {
     @Column(name = "material_jewel")
     private String materialJewel;
 
+    @Column(name = "nationality")
+    private String nationality;
 
-    public static JewelDataRecord from(JewelryInformation jewelryInformation){
+
+    public static JewelDataRecord from(InformationOfJewel informationOfJewel){
         JewelDataRecord record = new JewelDataRecord();
 
-        record.setCustomerId(jewelryInformation.getCustomerId().getValue());
-        record.setCaratsJewel(jewelryInformation.getCaratsJewel().getValue());
-        record.setMaterialJewel(jewelryInformation.getMaterialJewel().getValue());
-        record.setTypeJewel(jewelryInformation.getTypeJewel().getValue());
-        record.setWeightJewel(jewelryInformation.getWeightJewel().getValue());
+        record.setCustomerId(informationOfJewel.getCustomerId().getValue());
+        record.setCaratsJewel(informationOfJewel.getCaratsJewel().getValue());
+        record.setMaterialJewel(informationOfJewel.getMaterialJewel().getValue());
+        record.setTypeJewel(informationOfJewel.getTypeJewel().getValue());
+        record.setWeightJewel(informationOfJewel.getWeightJewel().getValue());
+        record.setNationality(informationOfJewel.getNationality().getValue());
 
         return record;
     }
@@ -78,5 +82,13 @@ public class JewelDataRecord {
 
     public void setMaterialJewel(String materialJewel) {
         this.materialJewel = materialJewel;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 }
